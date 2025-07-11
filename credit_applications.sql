@@ -1,4 +1,5 @@
 CREATE TABLE credit_application (
+    id                           serial          PRIMARY KEY,  -- Unique auto-increment key
     report_date                  timestamp       NOT NULL,
     report_country               varchar(50)     NOT NULL,
     report_portfolio             varchar(50)     NOT NULL,
