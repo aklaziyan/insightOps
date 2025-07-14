@@ -8,12 +8,12 @@ CREATE TABLE credit_application (
     main_channel                 varchar(50)     NOT NULL,
     subchannels                  varchar(50),
     purpose_of_loan              varchar(50)     NOT NULL,
-    credit_bureau_null_flag      boolean         NOT NULL,
+    credit_bureau_null_flag      boolean         NOT NULL,  -- <<==
     internal_model_score         decimal(10,4)   NOT NULL,
     expected_pd                  decimal(10,4),
-    policy_rules_flag            boolean         NOT NULL,
-    other_rule_flag              boolean         NOT NULL,
-    fraud_rule_flag              boolean         NOT NULL,
+    policy_rules_flag            boolean         NOT NULL,  -- <<==
+    other_rule_flag              boolean         NOT NULL,  -- <<==
+    fraud_rule_flag              boolean         NOT NULL,  -- <<==
     score_decline_flag           decimal(10,4),
     application_status           varchar(50)     NOT NULL,
     credit_bureau_query          varchar(100),
@@ -21,7 +21,7 @@ CREATE TABLE credit_application (
     all_credit_bureau_raw_fields integer,
     other_credit_bureau_scores   decimal(10,4),
     rule_details                 text,
-    affordability_flag           boolean         NOT NULL,
+    affordability_flag           boolean         NOT NULL,  -- <<==
     net_income                   decimal(10,4)   NOT NULL,
     net_expenditure              varchar(100),
     branch_id                    varchar(64),
@@ -29,7 +29,7 @@ CREATE TABLE credit_application (
     region_name                  varchar(100),
     cash_collateral              varchar(100),
     time_with_bank               timestamp,
-    auto_decision_flag           boolean         NOT NULL,
+    auto_decision_flag           boolean         NOT NULL,  -- <<==
     application_tenor            varchar(100),
     application_amount           decimal(10,4)   NOT NULL,
     approved_date                timestamp,
@@ -38,19 +38,19 @@ CREATE TABLE credit_application (
     disbursed_date               timestamp,
     disbursed_tenor              varchar(100),
     disbursed_amount             decimal(10,4),
-    postponment_flag             boolean,
+    postponment_flag             boolean,                 -- <<==
     postponment_month            varchar(100),
-    equal_installment_flag       boolean,
+    equal_installment_flag       boolean,                 -- <<==
     work_type                    varchar(50),
     working_sector               varchar(100),
     decision_engine_name         varchar(100),
-    credit_card_flag             boolean,
+    credit_card_flag             boolean,                 -- <<==
     credit_card_limit            decimal(10,4),
-    overdraft_flag               boolean,
+    overdraft_flag               boolean,                 -- <<==
     overdraft_limit              decimal(10,4),
-    car_loan_flag                boolean,
+    car_loan_flag                boolean,                 -- <<==
     car_loan_amount              decimal(10,4),
-    mortgage_flag                boolean,
+    mortgage_flag                boolean,                 -- <<==
     mortgage_amount              decimal(10,4),
     model_drivers                decimal(10,4),
     rule_drivers                 decimal(10,4),
@@ -64,8 +64,8 @@ CREATE TABLE credit_application (
     fee_amount                   decimal(10,4),
     pre_approved_last_valid_date timestamp,
     currency                     varchar(10)     NOT NULL,
-    salary_customer_flag         boolean         NOT NULL,
-    existing_customer_flag       boolean         NOT NULL
+    salary_customer_flag         boolean         NOT NULL,  -- <<==
+    existing_customer_flag       boolean         NOT NULL   -- <<==
 );
 
 COMMENT ON COLUMN credit_application.id IS 'Unique auto-increment key (row number, PRIMARY KEY)';
