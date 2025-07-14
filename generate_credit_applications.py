@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 
 # --- PostgreSQL bağlantı ayarlarını doldur ---
 DB_NAME = "insightops"
-DB_USER = "cihan"
+DB_USER = "insightops"
 DB_PASS = "insightops"   # şifreyi değiştir
 DB_HOST = "localhost"
 DB_PORT = 5432
