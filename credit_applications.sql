@@ -9,20 +9,20 @@ CREATE TABLE credit_application (
     subchannels                  varchar(50),
     purpose_of_loan              varchar(50)     NOT NULL,
     credit_bureau_null_flag      boolean         NOT NULL,  -- <<==
-    internal_model_score         decimal(10,4)   NOT NULL,
-    expected_pd                  decimal(10,4),
+    internal_model_score         decimal(18,4)   NOT NULL,
+    expected_pd                  decimal(18,4),
     policy_rules_flag            boolean         NOT NULL,  -- <<==
     other_rule_flag              boolean         NOT NULL,  -- <<==
     fraud_rule_flag              boolean         NOT NULL,  -- <<==
-    score_decline_flag           decimal(10,4),
+    score_decline_flag           decimal(18,4),
     application_status           varchar(50)     NOT NULL,
     credit_bureau_query          varchar(100),
-    credit_bureau_score          decimal(10,4),
+    credit_bureau_score          decimal(18,4),
     all_credit_bureau_raw_fields integer,
-    other_credit_bureau_scores   decimal(10,4),
+    other_credit_bureau_scores   decimal(18,4),
     rule_details                 text,
     affordability_flag           boolean         NOT NULL,  -- <<==
-    net_income                   decimal(10,4)   NOT NULL,
+    net_income                   decimal(18,4)   NOT NULL,
     net_expenditure              varchar(100),
     branch_id                    varchar(64),
     branch_name                  varchar(100),
@@ -31,13 +31,13 @@ CREATE TABLE credit_application (
     time_with_bank               timestamp,
     auto_decision_flag           boolean         NOT NULL,  -- <<==
     application_tenor            varchar(100),
-    application_amount           decimal(10,4)   NOT NULL,
+    application_amount           decimal(18,4)   NOT NULL,
     approved_date                timestamp,
     approved_tenor               varchar(100),
-    approved_amount              decimal(10,4),
+    approved_amount              decimal(18,4),
     disbursed_date               timestamp,
     disbursed_tenor              varchar(100),
-    disbursed_amount             decimal(10,4),
+    disbursed_amount             decimal(18,4),
     postponment_flag             boolean,                 -- <<==
     postponment_month            varchar(100),
     equal_installment_flag       boolean,                 -- <<==
@@ -45,23 +45,23 @@ CREATE TABLE credit_application (
     working_sector               varchar(100),
     decision_engine_name         varchar(100),
     credit_card_flag             boolean,                 -- <<==
-    credit_card_limit            decimal(10,4),
+    credit_card_limit            decimal(18,4),
     overdraft_flag               boolean,                 -- <<==
-    overdraft_limit              decimal(10,4),
+    overdraft_limit              decimal(18,4),
     car_loan_flag                boolean,                 -- <<==
-    car_loan_amount              decimal(10,4),
+    car_loan_amount              decimal(18,4),
     mortgage_flag                boolean,                 -- <<==
-    mortgage_amount              decimal(10,4),
-    model_drivers                decimal(10,4),
-    rule_drivers                 decimal(10,4),
+    mortgage_amount              decimal(18,4),
+    model_drivers                decimal(18,4),
+    rule_drivers                 decimal(18,4),
     utm_source                   varchar(100),
     manual_underwriter_id        varchar(64),
     affordability_reason         varchar(50),
     applicant_age                integer,
     applicant_gender             varchar(100),
-    interest_rate                decimal(10,4)   NOT NULL,
-    margin                       decimal(10,4),
-    fee_amount                   decimal(10,4),
+    interest_rate                decimal(18,4)   NOT NULL,
+    margin                       decimal(18,4),
+    fee_amount                   decimal(18,4),
     pre_approved_last_valid_date timestamp,
     currency                     varchar(10)     NOT NULL,
     salary_customer_flag         boolean         NOT NULL,  -- <<==
